@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <title>TANJAKAI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="logo">
+            <img src="ta.jpg" alt="#">
+            <div>
+                <h2>TANJAKAI</h2>
+                <span>Back-office</span>
+            </div>
+        </div>
+
+        <nav>
+            <a href="index.html" class="menu active"><i class='bx bxs-dashboard'></i> <span>Dashboard</span></a>
+            <a href="#" class="menu" data-page="saisines"><i class='bx bx-file'></i> <span>Saisines</span></a>
+            <a href="#" class="menu" data-page="clients"><i class='bx bxs-group'></i> <span>Clients</span></a>
+            <a href="#" class="menu" data-page="poles"><i class='bx bx-building-house'></i> <span>Pôles</span></a>
+            <a href="#" class="menu" data-page="motifs"><i class='bx bx-edit'></i> <span>Motifs</span></a>
+            <a href="#" class="menu" data-page="historiques"><i class='bx bx-history'></i> <span>Historiques</span></a>
+            <a href="#" class="menu" data-page="parametres"><i class='bx bx-cog'></i> <span>Paramètres</span></a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="#"><i class='bx bx-log-out'></i> <span>Déconnexion</span></a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <!-- HEADER -->
+        <header class="header">
+            <button id="menuBtn" class="menu-btn">
+                <i class='bx bx-menu'></i>
+            </button>
+            <div>
+                <h1 id="pageTitle">Dashboard</h1>
+                <p>Gestion des réclamations clients</p>
+            </div>
+            <div class="profile">
+                <div class="notification">
+                    <i class='bx bx-bell'></i>
+                    <span>3</span>
+                </div>
+                <div class="avatar">A</div>
+                <div>
+                    <strong>Admin</strong>
+                    <small>Administrateur</small>
+                </div>
+            </div>
+        </header>
+
+        <!-- STATISTIQUES -->
+        <section class="stats">
+            <div class="stat-card">
+                <div class="stat-icon"><i class='bx bx-file'></i></div>
+                <div>
+                    <span>Total saisines</span>
+                    <h2 id="totalSaisines">125</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon"><i class='bx bx-refresh'></i></div>
+                <div>
+                    <span>En cours</span>
+                    <h2 id="saisinesCours">35</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon"><i class='bx bx-check-square' ></i></div>
+                <div>
+                    <span>Traitées</span>
+                    <h2 id="saisinesTraitees">80</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon red"><i class='bx bx-error'></i></div>
+                <div>
+                    <span>En retard</span>
+                    <h2 id="enRetard">64</h2>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTENU -->
+        <section class="dashboard-grid">
+            <!-- SAISINES -->
+            <div class="card recent">
+                <div class="card-header">
+                    <div>
+                        <h2>Dernières saisines</h2>
+                        <p>Les dernières réclamations enregistrées</p>
+                    </div>
+                    <a href="#">Voir tout</a>
+                </div>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Référence</th>
+                                <th>Client</th>
+                                <th>Gravité</th>
+                                <th>Statut</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>REC-001</td>
+                                <td>Jean Rakoto</td>
+                                <td><span class="badge high">Haute</span></td>
+                                <td><span class="badge pending">En cours</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>REC-002</td>
+                                <td>Marie Andria</td>
+                                <td><span class="badge medium">Moyenne</span></td>
+                                <td><span class="badge success">Traité</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>REC-003</td>
+                                <td>Paul Rabe</td>
+                                <td><span class="badge low">Faible</span></td>
+                                <td><span class="badge pending">En cours</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>REC-004</td>
+                                <td>Sarah Ranaivo</td>
+                                <td><span class="badge high">Haute</span></td>
+                                <td> <span class="badge success">Traité</span> </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- ACTIVITÉS -->
+            <div class="card activity">
+                <div class="card-header">
+                    <div>
+                        <h2>Activités récentes</h2>
+                        <p>Dernières actions</p>
+                    </div>
+                </div>
+
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <div class="activity-icon"><i class='bx bx-file'></i></div>
+                        <div>
+                            <strong>Nouvelle saisine</strong>
+                            <p>REC-005 a été créée</p>
+                            <small>Il y a 10 min</small>
+                        </div>
+                    </div>
+
+                    <div class="activity-item">
+                        <div class="activity-icon"><i class='bx bx-check-square' ></i></div>
+                        <div>
+                            <strong>Saisine traitée</strong>
+                            <p>REC-002 a été traitée</p>
+                            <small>Il y a 30 min</small>
+                        </div>
+                    </div>
+
+                    <div class="activity-item">
+                        <div class="activity-icon"><i class='bx bxs-group'></i></div>
+                        <div>
+                            <strong>Nouveau client</strong>
+                            <p>Un nouveau client s'est inscrit</p>
+                            <small>Il y a 1 h</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
