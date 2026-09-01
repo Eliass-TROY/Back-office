@@ -109,7 +109,7 @@
                             <td>28/08/2026</td>
                             <td><span class="badge high">Haute</span></td>
                             <td><span class="badge pending">En cours</span></td>
-                            <td><button class="view-btn">Traiter</button></td>
+                            <td><button class="view-btn" onclick="ouvrirTraitement('REC-001')">Traiter</button></td>
                         </tr>
 
                         <tr>
@@ -119,7 +119,7 @@
                             <td>27/08/2026</td>
                             <td><span class="badge medium">Moyenne</span></td>
                             <td><span class="badge success">Traité</span></td>
-                            <td><button class="view-btn">Consulter</button></td>
+                            <td><button class="view-btn" onclick="ouvrirTraitement('REC-002')">Consulter</button></td>
                         </tr>
 
                         <tr>
@@ -129,7 +129,7 @@
                             <td>26/08/2026</td>
                             <td><span class="badge low">Faible</span></td>
                             <td><span class="badge pending">En cours </span></td>
-                            <td><button class="view-btn">Traiter</button></td>
+                            <td><button class="view-btn" onclick="ouvrirTraitement('REC-003')">Traiter</button></td>
                         </tr>
 
                         <tr>
@@ -139,7 +139,7 @@
                             <td>25/08/2026</td>
                             <td><span class="badge high">Haute</span></td>
                             <td><span class="badge new">Nouveau</span></td>
-                            <td><button class="view-btn">Traiter</button></td>
+                            <td><button class="view-btn" onclick="ouvrirTraitement('REC-004')">Traiter</button></td>
                         </tr>
                     </tbody>
                 </table>
@@ -147,6 +147,22 @@
         </section>
     </main>
 
-    <script src="..\script.js"></script>
+    <!-- FENÊTRE DE TRAITEMENT -->
+<div id="fenetreTraitement" class="fenetre-traitement">
+    <div class="contenu-traitement">
+    <!-- BARRE DE LA FENÊTRE -->
+        <div class="window-header" id="windowHeader">
+            <button class="fermer-traitement" onclick="fermerTraitement()">
+                <i class='bx bx-x'></i>
+            </button>
+        </div>
+
+        <!-- PAGE TRAITEMENT -->
+        <iframe id="traitementFrame"></iframe>
+    </div>
+
+</div>
+
+    <script src="saisine.js"></script>
 </body>
 </html>

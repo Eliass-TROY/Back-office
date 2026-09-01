@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traitement</title>
+    <link rel="stylesheet" href="traitement.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="traitement-window">
+
+        <div class="traitement-container">
+            <div class="traitement-header">
+                <div>
+                    <h1>Traitement de la saisine</h1>  
+                </div>
+                <span class="status">En cours</span>
+            </div>
+
+            <div class="traitement-body">
+                <!-- INFORMATIONS -->
+                <section class="info-card">
+                    <h2>Informations de la saisine</h2>
+                    <div class="info-grid">
+                        <div>
+                            <span>Référence</span>
+                            <strong id="refInfo">-</strong>
+                        </div>
+
+                        <div>
+                            <span>Client</span>
+                            <strong>Jean Rakoto</strong>
+                        </div>
+
+                        <div>
+                            <span>Date</span>
+                            <strong>28/08/2026</strong>
+                        </div>
+
+                        <div>
+                            <span>Gravité</span>
+                            <strong>Haute</strong>
+                        </div>
+                    </div>
+
+                    <div class="description">
+                        <span>Description</span>
+                        <p>
+                            Produit défectueux reçu par le client.
+                            Le client demande un remplacement du produit.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- FORMULAIRE -->
+                <section class="form-card">
+                    <h2>Traitement</h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="status"> Nouveau statut</label>
+                            <select id="status">
+                                <option value="En cours"> En cours </option>
+                                <option value="Traité"> Traité </option>
+                                <option value="Rejeté"> Rejeté </option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="commentaire"> Commentaire / réponse</label>
+                            <textarea id="commentaire" placeholder="Écrire le traitement ou la réponse apportée au client..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="piece"> Pièce jointe </label>
+                            <input type="file" id="piece">
+                        </div>
+
+                        <div class="actions">
+                            <button type="button" class="cancel"> Annuler </button>
+                            <button type="submit" class="save"><i class='bx bx-check'></i> Enregistrer le traitement </button>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script src="traitement.js"></script>
+</body>
+</html>

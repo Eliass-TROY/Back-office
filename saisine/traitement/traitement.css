@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background: #1d3669;
+    color: black;
+}
+
+.traitement-container {
+    padding: 30px;
+}
+
+/* HEADER */
+.traitement-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.traitement-header h1 {
+    font-size: 24px;
+}
+
+.status {
+    background: #dbeafe;
+    color: #2563eb;
+    padding: 7px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+/* CARTES */
+.info-card, .form-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+.info-card h2, .form-card h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* INFORMATIONS */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.info-grid span, .description span {
+    display: block;
+    color: #6b7280;
+    font-size: 13px;
+    margin-bottom: 6px;
+}
+
+.info-grid strong {
+    font-size: 14px;
+}
+
+.description {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.description p {
+    color: #4b5563;
+    line-height: 1.6;
+}
+
+/* FORMULAIRE */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.form-group select, .form-group textarea, .form-group input[type="file"] {
+    width: 100%;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 11px;
+    font-family: inherit;
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.form-group select:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+/* BOUTONS */
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.actions button {
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.cancel {
+    background: #f3f4f6;
+    color: #374151;
+}
+
+.cancel:hover {
+    background: #e5e7eb;
+}
+
+.save {
+    background: #2563eb;
+    color: white;
+}
+
+.save:hover {
+    background: #1d4ed8;
+}
