@@ -19,7 +19,6 @@ const gravityFilter = document.getElementById("gravityFilter");
 const table = document.getElementById("saisinesTable");
 const resultCount = document.getElementById("resultCount");
 
-
 function filterSaisines() {
     const search = searchInput.value.toLowerCase();
     const status = statusFilter.value;
@@ -41,9 +40,7 @@ function filterSaisines() {
         } else {
             row.style.display = "none";
         }
-
     });
-
     resultCount.textContent = count + " saisine(s) trouvée(s)";
 }
 
@@ -60,7 +57,6 @@ document.querySelectorAll(".view-btn").forEach(button => {
 });
 
 function ouvrirTraitement(reference) {
-
     const fenetre = document.getElementById("fenetreTraitement");
     const iframe = document.getElementById("traitementFrame");
 
@@ -73,7 +69,6 @@ function ouvrirTraitement(reference) {
 
 
 function fermerTraitement() {
-
     const fenetre = document.getElementById("fenetreTraitement");
     const iframe = document.getElementById("traitementFrame");
 
@@ -94,7 +89,6 @@ let positionY = 0;
 
 
 header.addEventListener("mousedown", function(e) {
-
     deplacement = true;
 
     const rect = contenu.getBoundingClientRect();
@@ -106,7 +100,6 @@ header.addEventListener("mousedown", function(e) {
 
 
 document.addEventListener("mousemove", function(e) {
-
     if (!deplacement) return;
 
     let x = e.clientX - positionX;
@@ -114,12 +107,10 @@ document.addEventListener("mousemove", function(e) {
 
     contenu.style.left = x + "px";
     contenu.style.top = y + "px";
-
 });
 
 
 document.addEventListener("mouseup", function() {
-
     deplacement = false;
 
 });

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <title>Poles</title>
+    <link rel="stylesheet" href="poles.css">
+</head>
+<body>
+     <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="logo">
+            <img src="..\ta.jpg" alt="#">
+            <div>
+                <h2>TANJAKAI</h2>
+                <span>Back-office</span>
+            </div>
+        </div>
+
+        <nav>
+            <a href="..\index.html" class="menu"><i class='bx bxs-dashboard'></i> <span>Dashboard</span></a>
+            <a href="..\saisine\saisine.html" class="menu" data-page="saisines"><i class='bx bx-file'></i> <span>Saisines</span></a>
+            <a href="..\clients\clients.html" class="menu" data-page="clients"><i class='bx bxs-group'></i> <span>Clients</span></a>
+            <a href="poles.html" class="menu active" data-page="poles"><i class='bx bx-building-house'></i> <span>Pôles</span></a>
+            <a href="#" class="menu" data-page="historiques"><i class='bx bx-history'></i> <span>Historiques</span></a>
+            <a href="#" class="menu" data-page="parametres"><i class='bx bx-cog'></i> <span>Paramètres</span></a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="#"><i class='bx bx-log-out'></i> <span>Déconnexion</span></a>
+        </div>
+    </aside>
+
+    <!-- MODAL AJOUTER UN PÔLE -->
+    <div class="modal" id="poleModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <h2>Ajouter un pôle</h2>
+                    <p>Créer un nouveau pôle</p>
+                </div>
+
+                <button class="close-btn" id="closeModal">
+                    <i class='bx bx-x'></i>
+                </button>
+            </div>
+
+            <form id="poleForm">
+                <div class="form-group">
+                    <label for="poleName">Nom du pôle</label>
+                    <input type="text" id="poleName" placeholder="Ex : Pôle Informatique" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="poleDescription">Description</label>
+                    <textarea id="poleDescription" rows="4" placeholder="Description du pôle..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="poleStatus">Statut</label>
+                    <select id="poleStatus">
+                        <option value="Actif">Actif</option>
+                        <option value="Inactif">Inactif</option>
+                    </select>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" class="cancel-btn" id="cancelBtn"> Annuler</button>
+                    <button type="submit" class="save-btn">
+                        <i class='bx bx-save'></i>
+                        Enregistrer
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <main class="main-content">
+         <!-- HEADER -->
+        <header class="header">
+            <button id="menuBtn" class="menu-btn">
+                <i class='bx bx-menu'></i>
+            </button>
+            <div>
+                <h1 id="pageTitle">Pôles</h1>
+                <p>Gestion des Pôles</p>
+            </div>
+            <div class="profile">
+                <div class="notification">
+                    <i class='bx bx-bell'></i>
+                    <span>3</span>
+                </div>
+                <div class="avatar">A</div>
+                <div>
+                    <strong>Admin</strong>
+                    <small>Administrateur</small>
+                </div>
+            </div>
+        </header>
+
+        <button class="add-btn" id="addPoleBtn">
+            <i class='bx bx-plus'></i>
+            Ajouter un pôle
+        </button>
+
+        <!-- LISTE DES PÔLES -->
+        <section class="card">
+            <div class="card-header">
+                <div>
+                    <h2>Liste des pôles</h2>
+                </div>
+            </div>
+
+            <div class="poles-list" id="polesList">
+
+                <!-- PÔLE 1 -->
+                <div class="pole-card">
+                    <div class="pole-icon"><i class='bx bx-building-house'></i></div>
+                    <div class="pole-info">
+                        <h3> Pôle Commercial</h3>
+                        <p> Gestion des problèmes liésaux produits et aux ventes.</p>
+                        <span>18 saisines </span>
+                    </div>
+                    <div class="pole-status">
+                        <span class="badge active">Actif</span>
+                    </div>
+
+                    <!-- MENU 3 POINTS -->
+                <div class="pole-menu">
+                    <button class="pole-menu-btn">
+                        <i class='bx bx-dots-vertical-rounded'></i>
+                    </button>
+
+                    <div class="pole-menu-content">
+                        <button class="set-active">
+                            <i class='bx bx-check-circle'></i>
+                            Actif
+                        </button>
+                        <button class="set-inactive">
+                            <i class='bx bx-x-circle'></i>
+                            Inactif
+                        </button>
+                        <button class="delete-pole">
+                            <i class='bx bx-trash'></i>
+                            Suprimer
+                        </button>
+
+                    </div>
+                </div>
+                </div>
+
+                <!-- PÔLE 2 -->
+                <div class="pole-card">
+                    <div class="pole-icon">
+                        <i class='bx bx-wrench'></i>
+                    </div>
+                    <div class="pole-info">
+                        <h3>Pôle Technique</h3>
+                        <p>Traitement des problèmes techniques et matériels.</p>
+                        <span> 25 saisines</span>
+                    </div>
+                    <div class="pole-status">
+                        <span class="badge active">
+                            Actif
+                        </span>
+                    </div>
+
+                    <!-- MENU 3 POINTS -->
+                    <div class="pole-menu">
+                        <button class="pole-menu-btn">
+                            <i class='bx bx-dots-vertical-rounded'></i>
+                        </button>
+
+                        <div class="pole-menu-content">
+                            <button class="set-active">
+                                <i class='bx bx-check-circle'></i>
+                                Actif
+                            </button>
+                            <button class="set-inactive">
+                                <i class='bx bx-x-circle'></i>
+                                Inactif
+                            </button>
+                            <button class="delete-pole">
+                                <i class='bx bx-trash'></i>
+                                Suprimer
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PÔLE 3 -->
+                <div class="pole-card">
+                    <div class="pole-icon">
+                        <i class='bx bx-message-rounded-dots' ></i>
+                    </div>
+
+                    <div class="pole-info">
+                        <h3>Pôle Service Client</h3>
+                        <p> Gestion des demandes et réclamations des clients.</p>
+                        <span>42 saisines</span>
+                    </div>
+
+                    <div class="pole-status">
+                        <span class="badge active">
+                            Actif
+                        </span>
+                    </div>
+
+                    <!-- MENU 3 POINTS -->
+                    <div class="pole-menu">
+                        <button class="pole-menu-btn">
+                            <i class='bx bx-dots-vertical-rounded'></i>
+                        </button>
+
+                        <div class="pole-menu-content">
+                            <button class="set-active">
+                                <i class='bx bx-check-circle'></i>
+                                Actif
+                            </button>
+                            <button class="set-inactive">
+                                <i class='bx bx-x-circle'></i>
+                                Inactif
+                            </button>
+                            <button class="delete-pole">
+                                <i class='bx bx-trash'></i>
+                                Suprimer
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PÔLE 4 -->
+                <div class="pole-card">
+                    <div class="pole-icon">
+                        <i class='bx bx-credit-card' ></i>
+                    </div>
+
+                    <div class="pole-info">
+                        <h3>Pôle Finance</h3>
+                        <p> Gestion des problèmes liés aux paiements et remboursements.</p>
+                        <span>12 saisines</span>
+                    </div>
+
+                    <div class="pole-status">
+                        <span class="badge inactive">
+                            Inactif
+                        </span>
+                    </div>
+
+                    <!-- MENU 3 POINTS -->
+                    <div class="pole-menu">
+                        <button class="pole-menu-btn">
+                            <i class='bx bx-dots-vertical-rounded'></i>
+                        </button>
+
+                        <div class="pole-menu-content">
+                            <button class="set-active">
+                                <i class='bx bx-check-circle'></i>
+                                Actif
+                            </button>
+                            <button class="set-inactive">
+                                <i class='bx bx-x-circle'></i>
+                                Inactif
+                            </button>
+                            <button class="delete-pole">
+                                <i class='bx bx-trash'></i>
+                                Suprimer
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="poles.js"></script>
+</body>
+</html>

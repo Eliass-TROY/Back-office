@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <title>Clients</title>
+    <link rel="stylesheet" href="clients.css">
+</head>
+<body>
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="logo">
+            <img src="..\ta.jpg" alt="#">
+            <div>
+                <h2>TANJAKAI</h2>
+                <span>Back-office</span>
+            </div>
+        </div>
+
+        <nav>
+            <a href="..\index.html" class="menu"><i class='bx bxs-dashboard'></i> <span>Dashboard</span></a>
+            <a href="..\saisine/saisine.html" class="menu" data-page="saisines"><i class='bx bx-file'></i> <span>Saisines</span></a>
+            <a href="clients.html" class="menu active" data-page="clients"><i class='bx bxs-group'></i> <span>Clients</span></a>
+            <a href="..\poles\poles.html" class="menu" data-page="poles"><i class='bx bx-building-house'></i> <span>Pôles</span></a>
+            <a href="#" class="menu" data-page="historiques"><i class='bx bx-history'></i> <span>Historiques</span></a>
+            <a href="#" class="menu" data-page="parametres"><i class='bx bx-cog'></i> <span>Paramètres</span></a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="#"><i class='bx bx-log-out'></i> <span>Déconnexion</span></a>
+        </div>
+    </aside>
+    <main class="main-content">
+         <!-- HEADER -->
+        <header class="header">
+            <button id="menuBtn" class="menu-btn">
+                <i class='bx bx-menu'></i>
+            </button>
+            <div>
+                <h1 id="pageTitle">Clients</h1>
+                <p>Gestion des réclamations clients</p>
+            </div>
+            <div class="profile">
+                <div class="notification">
+                    <i class='bx bx-bell'></i>
+                    <span>3</span>
+                </div>
+                <div class="avatar">A</div>
+                <div>
+                    <strong>Admin</strong>
+                    <small>Administrateur</small>
+                </div>
+            </div>
+        </header>
+
+        <!-- RECHERCHE -->
+        <section class="tools">
+            <div class="search-box">
+                <span><i class='bx bx-search-alt-2'></i></span>
+                <input type="text" id="searchInput"placeholder="Rechercher un client...">
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="card-header">
+                <div>
+                    <h2>Liste des clients</h2>
+                    <p id="resultCount">5 clients trouvés</p>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Client</th>
+                            <th>Email</th>
+                            <th>Téléphone</th>
+                            <th>Date d'inscription</th>
+                            <th>Saisines</th>
+                            <th>Statut</th>
+                        </tr>
+                    </thead>
+                    <tbody id="clientsTable">
+                        <tr>
+                            <td>
+                                <div class="client">
+                                    <div class="avatar-client">JR</div>
+                                    <strong>Jean Rakoto</strong>
+                                </div>
+                            </td>
+
+                            <td>jean@email.com</td>
+                            <td>034 12 345 67 </td>
+                            <td>20/08/2026 </td>
+                            <td>3</td>
+                            <td><span class="badge active">Actif</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="client">
+                                    <div class="avatar-client"> MA</div>
+                                    <strong>Marie Andria</strong>
+                                </div>
+                            </td>
+                            <td> marie@email.com</td>
+                            <td>032 45 678 90</td>
+                            <td>18/08/2026</td>
+                            <td>2 </td>
+                            <td><span class="badge active">Actif</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="client">
+                                    <div class="avatar-client"> PR</div>
+                                    <strong>Paul Rabe</strong>
+                                </div>
+                            </td>
+                            <td> paul@email.com</td>
+                            <td>033 78 456 12</td>
+                            <td>15/08/2026 </td>
+                            <td>1</td>
+                            <td><span class="badge active"> Actif</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="client">
+                                    <div class="avatar-client">SR</div>
+                                    <strong>Sarah Ranaivo</strong>
+                                </div>
+                            </td>
+                            <td>sarah@email.com</td>
+                            <td>034 56 789 01</td>
+                            <td>12/08/2026</td>
+                            <td> 4</td>
+                            <td><span class="badge active">Actif</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="client">
+                                    <div class="avatar-client">FN</div>
+                                    <strong>Fara Nirina</strong>
+                                </div>
+                            </td>
+                            <td>fara@email.com</td>
+                            <td>032 11 222 33</td>
+                            <td>10/08/2026</td>
+                            <td>0</td>
+                            <td><span class="badge inactive">Inactif</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="clients.js"></script>
+</body>
+</html>
